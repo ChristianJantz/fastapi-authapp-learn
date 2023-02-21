@@ -1,1 +1,1 @@
-# fastapi-uvicorn-learn
+# fastapi-authapp-learn
