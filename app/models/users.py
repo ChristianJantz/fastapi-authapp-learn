@@ -10,7 +10,7 @@ class Roles(str, Enum):
 class BaseUser(SQLModel):
     email: EmailStr
     username: str
-    is_active: bool
+    is_active: bool = True
     role: Roles
     
 class User(BaseUser, table=True):
