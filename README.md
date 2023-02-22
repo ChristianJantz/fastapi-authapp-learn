@@ -9,7 +9,7 @@ contains the routes
 all necessary functions to init a Database 
 
 # commons/crud.py
-contains all the C.r.u.d. functionalty
+contains all the C.R.U.D functionalty
 
 # commons/auth.py
 in the auth.py file is the logic of the password hash and verify functionalty 

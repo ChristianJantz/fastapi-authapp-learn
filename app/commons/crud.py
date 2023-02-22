@@ -1,5 +1,6 @@
 from ..schemas.user import UserSchema
 from ..models.users import User
+from ..commons import auth
 from sqlmodel import Session
 
 def create_user(db_session: Session, user: UserSchema) -> dict:
@@ -12,7 +13,7 @@ def create_user(db_session: Session, user: UserSchema) -> dict:
     Returns:
         dict: json message if creation successed
     """
-    hashed_pwd = user.password
+    hashed_pwd = auth.create_password_hash(user.password)
     db_user = User(
         email= user.email,
         username= user.username,
@@ -36,3 +37,7 @@ def get_users(db_session: Session) -> list:
     """
     userlist = db_session.query(User).all()
     return userlist
+
+def get_user_by_username(db_session: Session, username: str) -> object:
+    user = db_session.query(User).filter(User.username == username).first()
+    return user

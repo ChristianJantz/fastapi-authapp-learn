@@ -1,0 +1,2 @@
+JWT_SECRET = "secretofjwt"
+ALGORRITHUS = "HS256"
